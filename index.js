@@ -23,7 +23,7 @@ const browser = await playwright.chromium.launch({ headless: true, })
 const context = await browser.newContext()
 const page = await context.newPage()
 
-await page.goto("https://www.cpliving.com/apartments/metro", { waitUntil: "networkidle" })
+await page.goto("https://www.cpliving.com/apartments/metro", { waitUntil: "domcontentloaded" })
 
 const suites = await page.locator("div.suite").all()
 
